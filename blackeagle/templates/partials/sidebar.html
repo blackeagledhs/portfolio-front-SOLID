@@ -1,0 +1,33 @@
+<aside class="sidebar">
+    <div class="sidebar-column">
+        <div class="sidebar-buttons">
+            <button onclick="location.href='{% url 'education' %}'">Educación</button>
+            <button onclick="location.href='{% url 'experience' %}'">Experiencia</button>
+            <button onclick="location.href='{% url 'project' %}'">Proyectos</button>
+            <button onclick="location.href='{% url 'extra' %}'">Extras</button>
+            <button onclick="location.href='{% url 'contact' %}'">Contacto</button>
+            <button onclick="downloadCV()">Descargar CV</button>
+        </div>
+    </div>
+    <div class="sidebar-column">
+        <div class="sidebar-social">
+            <a href="https://github.com/blackeagledhs" class="social-link"><i class="bi bi-github"></i></i></a>
+            <a href="mailto://mauro.vicens@gmail.com" class="social-link"><i class="bi bi-envelope"></i></a>
+            <a href="https://linkedin.com/in/mauro-andres-vicens" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="https://instagram.com/mauro.vicens" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="https://t.me/Black_Eagle_DHS" class="social-link"><i class="bi bi-telegram"></i></a>
+            <a href="https://wa.me/5493471630170" class="social-link"><i class="bi bi-whatsapp"></i></a>
+        </div>
+    </div>
+</aside>
+<div class="hamburger-menu">
+    <div class="hamburger-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</div>
+
+{% load static%}
+
+<script src="{% static 'portfolio/js/cv.js '%}"></script>

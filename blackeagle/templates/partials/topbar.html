@@ -1,0 +1,22 @@
+<header class="topbar">
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="menu">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'education' %}">Educación</a></li>
+            <li><a href="{% url 'experience' %}">Experiencia</a></li>
+            <li><a href="{% url 'project' %}">Proyectos</a></li>
+            <li><a href="{% url 'extra' %}">Extras</a></li>
+            <li><a href="{% url 'contact' %}">Contacto</a></li>
+            <li><a href="http://e.pc.cd/NBnotalK" download="CV-Mauro-Andres-Vicens.pdf" target="_blank">Descargar CV</a></li>
+        </ul>
+    </nav>
+</header>
+
+{% load static %}
+
+<script src="{% static 'portfolio/js/menu.js' %}"></script>

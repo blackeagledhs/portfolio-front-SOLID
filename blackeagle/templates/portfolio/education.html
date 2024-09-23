@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Educacion y Extras</title>
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static 'portfolio/assets/bedhs.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'partials/topbar.html' %}
+
+    <main>
+      <h2 class="titles">Estudios y Cursos</h2>
+      <section class="education">
+        {% for education in educations %}
+        <div
+          class="card"
+          data-title="{{ education.title }}"
+          data-institute="{{ education.institute }}"
+          data-year="{{ education.year }}"
+          data-image="{{ education.image }}"
+          data-description="{{ education.desccription }}"
+        >
+          <div class="card-header">
+            <h2 class="card-title">{{ education.title }}</h2>
+            <h3 class="card-institute">
+              {{ education.institute }} - {{ education.year }}
+            </h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description">{{ education.desccription }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="educationModal">
+      <span class="close" id="modalClose">&times;</span>
+      <div class="modal-content" id="modalContent">
+          <img class="modal-image" id="modalImage" alt="Education Image">
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <h3 class="modal-institute" id="modalInstitute"></h3>
+      </div>
+  </div>
+
+    {% include 'partials/footer.html' %} {% load static %}
+    <script src="{% static 'portfolio/js/modal-education.js' %}"></script>
+  </body>
+</html>

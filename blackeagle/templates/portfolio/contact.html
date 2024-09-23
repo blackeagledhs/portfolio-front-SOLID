@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static 'portfolio/assets/bedhs.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+</head>
+<body>
+
+    {% include 'partials/topbar.html' %}
+
+    <div class="contact-container">
+        <div class="form-container">
+            <div id="message" class="message" style="display:none;"></div>
+            <form id="contactForm" method="POST" action="{% url 'submit_contact' %}">
+                {% csrf_token %}
+                <label for="full_name">Nombre Completo:</label>
+                <input type="text" id="full_name" name="full_name" required><br><br>
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required><br><br>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Información de Contacto</h2>
+            <p><strong>Teléfono:</strong> +54 9 3471 630170</p>
+            <p><strong>Email:</strong> mauro.vicens@gmail.com</p>
+            <p><strong>Dirección:</strong> Armstrong, Argentina</p>
+            <p><strong>Horarios:</strong> Lunes - Viernes: 9am - 5pm</p>
+            <div class="contact-social">
+                <a href="https://github.com/blackeagledhs" class="social-link"><i class="bi bi-github"></i></i></a>
+                <a href="https://linkedin.com/in/mauro-andres-vicens" class="social-link"><i class="bi bi-linkedin"></i></a>
+                <a href="https://instagram.com/mauro.vicens" class="social-link"><i class="bi bi-instagram"></i></a>
+                <a href="https://t.me/Black_Eagle_DHS" class="social-link"><i class="bi bi-telegram"></i></a>
+                <a href="https://wa.me/5493471630170" class="social-link"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html'%}
+
+    <script>
+        var submitContactUrl = "{% url 'submit_contact' %}";
+        var csrfToken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'portfolio/js/contact.js' %}"></script>
+
+
+</body>
+</html>

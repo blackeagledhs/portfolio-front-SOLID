@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras</title>
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static 'portfolio/assets/bedhs.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+</head>
+<body>
+    {% include 'partials/topbar.html' %}
+
+    <main>
+        <section class="extra-section">
+            <div class="extra-card">
+                {% for extra in extras %}
+                    <div class="extra-item">
+                        <span class="year">{{ extra.year }}</span> -
+                        <span class="activity">{{ extra.activity }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="other-section">
+            {% for other in others %}
+                <div class="other-card">
+                    <img src="{{ other.image }}" alt="Imagen de {{ other.title }}">
+                    <h2>{{ other.title }}</h2>
+                    <p class="institute-year">{{ other.institute }} - {{ other.year }}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    {% include 'partials/footer.html'%}
+
+</body>
+</html>

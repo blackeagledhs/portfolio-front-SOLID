@@ -1,0 +1,121 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 210px; /* Ajustado el ancho */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px; /* Reducido el espacio entre columnas */
+}
+
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto 0;
+}
+
+.sidebar-buttons button {
+    background-color: #444;
+    color: white;
+    border: 1px solid transparent; /* Set initial border */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #ffffff;
+    transform: skew(-20deg);
+    border-image-source: linear-gradient(135deg, #FF4500, #FFA500); /* Gradient border */
+    border-image-slice: 1;
+}
+
+.sidebar-buttons button:hover {
+    background-color: #555;
+    transform: skew(-20deg) scale(1.1);
+    background: linear-gradient(135deg, #FF4500, #FFA500);
+}
+
+.sidebar-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto 0;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #444;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.social-link i {
+    font-size: 20px;
+}
+
+.social-link:hover {
+    background-color: #555;
+}
+
+
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hamburger-menu:hover .bar {
+    background-color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
