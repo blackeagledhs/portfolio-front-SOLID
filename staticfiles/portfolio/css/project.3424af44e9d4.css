@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.projects-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f3e5db44;
+    padding: 20px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 50%; /* Show 2 slides at the same time on larger screens */
+    box-sizing: border-box;
+    padding: 16px;
+    position: relative;
+    flex: 0 0 50%;
+}
+
+.slide-content {
+    background-color: #999999; /* Grey background for the slide */
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.slide img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+}
+
+.text-content {
+    background-color: #333; /* Dark grey background for the text content */
+    color: #fff;
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%; /* Ensures the text content spans the width of the slide */
+
+}
+
+.text-content h2 {
+    font-size: 1.5em;
+    margin: 0 0 8px 0;
+}
+
+.text-content p {
+    font-size: 1em;
+    margin: 0 0 16px 0;
+    height: 45px;
+    color: #ccc; /* Light grey text for description */
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #555; /* Medium grey for the button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.project-btn:hover {
+    background-color: #777; /* Slightly lighter grey on hover */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .slide {
+        flex-basis: 100%;
+        flex: 0 0 100%; /* Ensure slides take up 100% of the width */
+        padding: 8px; /* Reduce padding for slides */
+    }
+
+    .slide-content {
+        padding: 8px; /* Reduce padding inside slide content */
+    }
+
+    .slide img {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
+
+    .text-content {
+        padding: 8px; /* Reduce padding inside text content */
+        margin-top: 8px; /* Reduce margin top */
+    }
+
+    .text-content h2 {
+        font-size: 1.2em; /* Reduce font size for headers */
+    }
+
+    .text-content p {
+        font-size: 0.9em; /* Reduce font size for paragraph */
+        height: auto; /* Adjust height */
+    }
+
+    .project-btn {
+        padding: 8px 16px; /* Reduce padding for button */
+    }
+}
+
+@media (min-width:769px) {
+    flex-basis: 50%;
+
+}
